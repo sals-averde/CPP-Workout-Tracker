@@ -63,3 +63,16 @@ Each routine contains structured exercises and rep ranges.
 - Add user profiles and authentication
 - Add visual calendar for easier tracking
   
+### Images
+ - Application flow in picture order:
+    
+<img width="1713" height="909" alt="Screenshot 2026-05-01 225647" src="https://github.com/user-attachments/assets/ed2d5707-a8aa-4615-861a-4004f86c1cf4" />
+<img width="1722" height="919" alt="Screenshot 2026-05-01 225725" src="https://github.com/user-attachments/assets/00cd296c-c9bd-49ff-b473-9628d24d12d2" />
+<img width="1726" height="921" alt="Screenshot 2026-05-01 225753" src="https://github.com/user-attachments/assets/488b48f1-3365-4570-93c9-16d1bad0f6e0" />
+<img width="1717" height="924" alt="Screenshot 2026-05-01 225818" src="https://github.com/user-attachments/assets/0c7f5704-768b-4ea5-99e4-bc1e5fd3b888" />
+<img width="1724" height="921" alt="Screenshot 2026-05-01 225839" src="https://github.com/user-attachments/assets/14b22934-c52e-4786-8b40-397934c293f9" />
+
+
+
+
+
