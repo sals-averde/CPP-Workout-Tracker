@@ -1,7 +1,7 @@
 # CPP-Workout-Tracker
 A terminal-based workout tracking application built in C++ that allows users to log workouts, track consistency, and generate structured routines.
 
-##Features
+### Features
 
 ### Workout Logging
   - Log workouts with the current date
