@@ -10,17 +10,59 @@
 using namespace std;
 
 int main()
+//UPDATE 05/05/2026 in progres............................................................................................
+{
+    Workout PushDay = {
+            "Pre-Built",
+            "Push-Day",
+        {
+                {"Bench Press", 3, 8},
+                {"Overhead Press", 3, 5},
+                {"Incline DB Press", 3, 8},
+                {"Lateral Raises", 3, 12},
+                {"Tricep Pushdown", 3, 10},
+        }
+    };
+
+    Workout PullDay = {
+        "Pre-Built",
+        "Pull-Day",
+        {
+            {"Pull Ups", 3, 10},
+            {"Lat Pulldowns", 3, 10},
+            {"Seated Cable Row", 3, 8},
+            {"Face Pulls", 3, 12},
+            {"Bicep Curls", 3, 12},
+        }
+    };
+
+    Workout LegDay = {
+        "Pre-Built",
+        "Leg Day",
+        {
+            {"Squat", 3, 5},
+            {"Romanian Deadlifts", 3, 8},
+            {"Calf Raise", 3, 15},
+            {"Back Extension", 3, 10},
+        }
+    };
+
+    Workout PreGym = {
+        "Pre-Built",
+        "Pre-Gym",
+        {
+            {"Glute Bridges", 3, 8},
+            {"Resistance Band Work", 2, 10},
+
+        }
+    };
+
 //GOAL: Gym application -
             //calendar for tracking days streaks etc.
             //recomend workouts n build routines (pre loaded list)
             //have options in menu.
-{
-
-    Workout PushDay = {"Push Day", {"Bench Press - 3x5","Overhead Press - 3x5", "Incline DB Press - 3x8-10", "Lateral Raises 3x12 -15", "Tricep Pushdown - 3x10-12" }};
-    Workout PullDay = {"Pull Day", {"Pull-Ups - 3x6-10","Lat Pulldown - 3x6-10", "Seated Cable Row - 3x8", "Face Pulls - 3x12-15", "Bicep Curls - 3x10-12" }};
-    Workout LegDay = {"Leg Day", {"Squat - 3x5", "Romanian Deadlifts - 3x6-8", "Calf Raise - 3x12-15", "Back Extension - 3 x 10-15", }};
-    Workout PreGym = {"Pre Gym",{"Glute Bridge - 3x8", "Resistance Band Work",}};
     vector<Workout> Workouts ={PushDay, PullDay, LegDay, PreGym};
+    Workout capture;
 
     cout <<"=========Welcome to the Application!========="<< endl;
 
@@ -28,7 +70,9 @@ int main()
     cout << " 2.) Log Workout" << endl;
     cout << " 3.) Get Random Workout" << endl;
     cout << " 4.) History" << endl;
-    cout << " 5.) Exit" << endl;
+    cout << " 5.) Create Workout" << endl;
+    cout << " 6.) Display Workout" << endl;
+    cout << " 7.) Exit" << endl;
     cout <<"=============================================="<< endl;
     int choice;
     do{
@@ -53,13 +97,20 @@ int main()
                 break;
 
             case 5:
+                capture = CreateWorkout();
+                break;
+            case 6:
+                DisplayWorkout(capture);
+                break;
+
+            case 7:
                 cout << "Exiting, Bye-bye" << endl;
                 break;
 
             default:
                 cout << "invalid. Try again " << endl;
         }
-    } while(choice != 5);
+    } while(choice != 7);
 
     cout << "===============================================" << endl;
 

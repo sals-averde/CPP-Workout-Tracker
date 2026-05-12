@@ -51,13 +51,14 @@ void LogWorkout(vector<Workout> Workouts){
     int pick;
     cout << "Pick One (0 for Custom):";
     cin >> pick;
-    cin.ignore();
+    cin.ignore(1000, '\n');
 
     //custom part
     string WorkoutName;
+    Workout custom;
     if (pick == 0){
     cout << "Enter Custom: ";
-    getline(cin, WorkoutName);
+        custom = CreateWorkout();
     }else{
         WorkoutName = Workouts[pick-1].name; //grabs directly from bank
     }
@@ -68,8 +69,17 @@ void LogWorkout(vector<Workout> Workouts){
     if (!outFile.is_open()){
         cout << "Issues Writing to File :(" <<endl;
     }
+    if(pick == 0){
+
+    outFile << custom.date << " - " << custom.name << endl;
+    for (const Exercise& E : custom.excercise){
+        outFile << E.name <<"-" << E.sets <<" x" << E.reps <<endl;
+    }
+    outFile.close();
+    } else{
     outFile << GetDate() << " - " << WorkoutName << endl;
     outFile.close();
+    }
 };
 
 //Deleting from file - C++ has no "erase" so we much rewrite
@@ -124,9 +134,11 @@ void ViewHistory(){
     cin >> pick;
     cin.ignore();
 
-    if (pick != 0){
+    if (pick != 0 && pick <= lines.size()){
         DeleteEntry(lines[pick-1]); //Passes the tect here skips
         cout << "Deleted!" << endl;
+    } else {
+        cout << "Invalid Operation Try again!" << endl;
     }
 
 };

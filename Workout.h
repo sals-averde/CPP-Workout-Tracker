@@ -4,10 +4,21 @@
 #include <vector>
 using namespace std;
 
-struct Workout{
+struct Exercise{
     string name;
-    vector <string> excercise;
+    int sets;
+    int reps;
 };
+
+struct Workout{
+    string date;
+    string name;
+    vector <Exercise> excercise;
+};
+
+Workout CreateWorkout();
+void DisplayWorkout(const Workout& W);
+
 
 string GetDate();
 int CountStreak(vector<string> dates);

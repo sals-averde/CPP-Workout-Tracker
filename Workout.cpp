@@ -73,13 +73,58 @@ void GetRandomWorkout(vector<Workout> Workouts){
                                     //% modulo just keeps our numbers between 0-3
     cout << "========================================" <<endl;
     cout << Workouts[i].name << endl;
+
     for (int j = 0; j < Workouts[i].excercise.size(); j++){
-        cout << Workouts[i].excercise[j] << endl;
+        cout << Workouts[i].excercise[j].name << " - "
+        << Workouts[i].excercise[j].sets << " sets x "
+        << Workouts[i].excercise[j].reps << " reps" << endl;
     }
     cout << "========================================" <<endl;
 };
 
+Workout CreateWorkout(){
+    cin.ignore(1000, '\n');
+    Workout W;
+    int exerciseCount;
 
+    cout << "Enter Date: ";
+    getline(cin >> ws, W.date);
+
+    cout << "Enter Workout Name: ";
+    getline(cin, W.name);
+
+    cout << "How Many Exercises:" ;
+    cin >> exerciseCount;
+    cin.ignore();
+
+    for(int i = 0; i < exerciseCount; i++){
+        Exercise E;
+        cout << "Enter Exercise " << i + 1 << " Name: ";
+        getline(cin, E.name);
+        cout << "Sets: ";
+        cin >> E.sets;
+        cin.ignore();
+        cout << "Reps: ";
+        cin >> E.reps;
+        //for loops sake remember we must discard leftover \n so geline dosent grab it
+        cin.ignore();
+        //remove this line see how it breaks
+
+        //push back into vector
+        W.excercise.push_back(E);
+    }
+    return W;
+};
+
+void DisplayWorkout(const Workout& W){
+    cout << "|| Workout Name:      " << W.name <<" || Workout Date: " << W.date << " ||" <<  endl;
+
+    for (const Exercise& E : W.excercise){
+        cout << "|| Exercise Name: " << E.name << "    || Sets: " << E.sets << "x " << E.reps << "Reps     ||" << endl;
+
+    }
+
+}
 
 
 
