@@ -70,9 +70,9 @@ int main()
     cout << " 2.) Log Workout" << endl;
     cout << " 3.) Get Random Workout" << endl;
     cout << " 4.) History" << endl;
-    cout << " 5.) Create Workout" << endl;
-    cout << " 6.) Display Workout" << endl;
-    cout << " 7.) Exit" << endl;
+    //reworking cout << " 5.) Create Workout" << endl;
+   //reworking cout << " 6.) Display Workout" << endl;
+    cout << " 5.) Exit" << endl;
     cout <<"=============================================="<< endl;
     int choice;
     do{
@@ -97,20 +97,13 @@ int main()
                 break;
 
             case 5:
-                capture = CreateWorkout();
-                break;
-            case 6:
-                DisplayWorkout(capture);
-                break;
-
-            case 7:
                 cout << "Exiting, Bye-bye" << endl;
                 break;
 
             default:
                 cout << "invalid. Try again " << endl;
         }
-    } while(choice != 7);
+    } while(choice != 5);
 
     cout << "===============================================" << endl;
 

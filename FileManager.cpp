@@ -57,7 +57,6 @@ void LogWorkout(vector<Workout> Workouts){
     string WorkoutName;
     Workout custom;
     if (pick == 0){
-    cout << "Enter Custom: ";
         custom = CreateWorkout();
     }else{
         WorkoutName = Workouts[pick-1].name; //grabs directly from bank
@@ -69,16 +68,17 @@ void LogWorkout(vector<Workout> Workouts){
     if (!outFile.is_open()){
         cout << "Issues Writing to File :(" <<endl;
     }
-    if(pick == 0){
 
-    outFile << custom.date << " - " << custom.name << endl;
-    for (const Exercise& E : custom.excercise){
-        outFile << E.name <<"-" << E.sets <<" x" << E.reps <<endl;
-    }
-    outFile.close();
+    if(pick == 0){
+        string Entry = custom.date + " - " + custom.name;
+        for (const Exercise& E : custom.excercise){
+            Entry = Entry + " | " + E.name + " " + to_string(E.sets) + "x" + to_string(E.reps);
+        }
+        outFile << Entry << endl;
+        outFile.close();
     } else{
-    outFile << GetDate() << " - " << WorkoutName << endl;
-    outFile.close();
+        outFile << GetDate() << " - " << WorkoutName << endl;
+        outFile.close();
     }
 };
 

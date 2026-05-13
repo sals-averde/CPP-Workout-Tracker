@@ -83,15 +83,15 @@ void GetRandomWorkout(vector<Workout> Workouts){
 };
 
 Workout CreateWorkout(){
-    cin.ignore(1000, '\n');
     Workout W;
     int exerciseCount;
 
-    cout << "Enter Date: ";
-    getline(cin >> ws, W.date);
+
+    W.date = GetDate();
 
     cout << "Enter Workout Name: ";
     getline(cin, W.name);
+
 
     cout << "How Many Exercises:" ;
     cin >> exerciseCount;
